@@ -18,7 +18,7 @@ plantuml -testdot # Ensure PlantUML can generate images with Graphviz.
 This package is tested with TeX Live 2025.
 In theory, any LaTeX distribution from [here](https://www.latex-project.org/get/) should work, but if you do not have one installed yet, we recommend installing TeX Live.
 
-# Installation
+## Installation
 
 ### Manual Installation
 1. Locate your personal TeX tree. If you are using TeX Live, you can find the path by running:
