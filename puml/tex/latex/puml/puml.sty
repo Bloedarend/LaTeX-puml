@@ -1,0 +1,43 @@
+% puml.sty
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{puml}
+
+\RequirePackage{graphicx}
+\RequirePackage{ifthen}
+\RequirePackage{shellesc}
+
+\newcommand{\includepuml}[2][]{
+	\def\sourcefile{}
+	\def\pdffile{}
+	\IfFileExists{#2}{
+		\def\sourcefile{#2}
+		\edef\pdffile{#2.pdf}
+	}{
+		\IfFileExists{#2.puml}{
+			\def\sourcefile{#2.puml}
+			\edef\pdffile{#2.pdf}
+		}{
+			\IfFileExists{#2.plantuml}{
+				\def\sourcefile{#2.plantuml}
+				\edef\pdffile{#2.pdf}
+			}{
+				\PackageError{includepuml}{File `#2` not found}{Provide a .puml or .plantuml file}
+			}
+		}
+	}
+	\IfFileExists{\pdffile}{}{
+		\immediate\write18{plantuml -tpdf "\sourcefile"}
+	}
+	\includegraphics[#1]{\pdffile}
+	\ifthenelse{\isundefined{\pdfshellescape}}{}{
+		\begingroup
+		\ifnum\pdfshellescape>0
+			\ifdefined\windows
+				\immediate\write18{if exist "\pdffile" del /Q "\pdffile"}
+			\else
+				\immediate\write18{rm -f "\pdffile"}
+			\fi
+		\fi
+		\endgroup
+	}
+}
