@@ -49,7 +49,7 @@ In theory, any LaTeX distribution from [here](https://www.latex-project.org/get/
    ./ltxe.sh add puml https://github.com/Bloedarend/LaTeX-puml.git
     ```
 
-    or add the `longlisting` directory from this repository directly to the `pkg` directory of the LaTeX Environment repository.
+    or add the `puml` directory from this repository directly to the `pkg` directory of the LaTeX Environment repository.
 3. Run the following command inside the LaTeX Environment repository to update the packages.
     ```bash
     ./ltxe.sh sync
