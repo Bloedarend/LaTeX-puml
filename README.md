@@ -46,7 +46,7 @@ In theory, any LaTeX distribution from [here](https://www.latex-project.org/get/
 1. Clone the LaTeX Environment repository from [here](https://github.com/Bloedarend/LaTeX-Environment).
 2. Run the command
     ```bash
-   ./ltxe.sh add longlisting https://github.com/Bloedarend/LaTeX-longlisting.git
+   ./ltxe.sh add puml https://github.com/Bloedarend/LaTeX-puml.git
     ```
 
     or add the `longlisting` directory from this repository directly to the `pkg` directory of the LaTeX Environment repository.
