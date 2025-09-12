@@ -44,10 +44,15 @@ In theory, any LaTeX distribution from [here](https://www.latex-project.org/get/
 
 ### Installation with LTXE.
 1. Clone the LaTeX Environment repository from [here](https://github.com/Bloedarend/LaTeX-Environment).
-2. Add the `puml` directory from this repository to the `pkg` directory of the LaTeX Environment repository.
+2. Run the command
+    ```bash
+   ./ltxe.sh add longlisting https://github.com/Bloedarend/LaTeX-longlisting.git
+    ```
+
+    or add the `longlisting` directory from this repository directly to the `pkg` directory of the LaTeX Environment repository.
 3. Run the following command inside the LaTeX Environment repository to update the packages.
     ```bash
-    ./ltxe.sh u
+    ./ltxe.sh sync
     ```
 
 ## Usage
